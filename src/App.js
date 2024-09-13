@@ -2,13 +2,14 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 import './App.css';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
 
 
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=1342004ac117dd1dd49618e74b9c9168`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
   const searchLocation = (e) => {
     if (e.key === 'Enter') {
